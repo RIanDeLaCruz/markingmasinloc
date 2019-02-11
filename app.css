@@ -1,0 +1,78 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(4, calc(100vh / 4));
+  grid-template-columns: repeat(4, calc(100vw / 4));
+  grid-template-areas: "a a b b""a a b b""c c d d""c c d d";
+}
+
+#title_link {
+  grid-area: t;
+  grid-row: 2/4;
+  grid-column: 2/4;
+  z-index: 2;
+}
+#section1_link {
+  grid-area: a;
+}
+#section2_link {
+  grid-area: b;
+}
+#section3_link {
+  grid-area: c;
+}
+#section4_link {
+  grid-area: d;
+}
+img {
+  width: 100%;
+}
+
+.link:link,
+.link:visited {
+}
+
+.link:focus,
+.link:hover,
+.link:active {
+  border: solid 2px gold;
+  z-index:3;
+}
+.link:focus img,
+.link:hover img,
+.link:active img {
+  -webkit-filter: saturate(4);
+  filter: saturate(4);
+}
+
+.content {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  transition: all 1s;
+}
+
+.content button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.content.active {
+  transform: translateY(-100vh);
+  z-index: 5;
+  background-color: white;
+}
+
+#title {
+}
